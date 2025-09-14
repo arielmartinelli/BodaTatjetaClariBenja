@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="es" itemscope itemtype="https://schema.org/Event">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Título y descripción -->
 <title>Invitación de boda — Clarisa & Benjamín</title>
 <meta name="description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026 en Salón Las Estrellas, Córdoba. Confirmá tu asistencia y agregá el evento a tu calendario." />
 
-<!-- Open Graph -->
+<!-- Open Graph / Facebook -->
+<meta property="og:url" content="https://tarjeta-boda-benja-clari.vercel.app/" />
+<meta property="og:type" content="website" />
 <meta property="og:title" content="Invitación de boda — Clarisa & Benjamín" />
 <meta property="og:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
 <meta property="og:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
-<meta property="og:url" content="https://tarjeta-boda-benja-clari.vercel.app/" />
-<meta property="og:type" content="website" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="628" />
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content="tarjeta-boda-benja-clari.vercel.app" />
+<meta property="twitter:url" content="https://tarjeta-boda-benja-clari.vercel.app/" />
 <meta name="twitter:title" content="Invitación de boda — Clarisa & Benjamín" />
 <meta name="twitter:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
 <meta name="twitter:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
@@ -30,17 +34,18 @@
 <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- AOS (Animate On Scroll) para efecto tipo Aniview -->
+<!-- AOS (Animate On Scroll) -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-<!-- Animate.css para microanimaciones -->
+<!-- Animate.css -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"/>
 
 <!-- Particles.js -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
+<!-- Estilos CSS -->
 <style>
-/* ======  TU CSS ORIGINAL ====== */
+/* ====== TU CSS ORIGINAL ====== */
 :root{--bg-start:#fffdfc;--bg-end:#fef7f8;--primary:#e3b7c0;--primary-dark:#c90f34;--accent:#f9e6ea;--ink:#4a3b3b;--muted:#7b6e6e;--card:#ffffff;--shadow:0 6px 20px rgba(0,0,0,.08);--radius:20px;--hero-img:url(fotos/2.jpg);}
 *{box-sizing:border-box;}
 body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:linear-gradient(to bottom,var(--bg-start),var(--bg-end));min-height:100vh;line-height:1.6;overflow-x:hidden;}
@@ -75,10 +80,11 @@ body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:linear-
 @media (max-width:768px){.hero{min-height:60vh;}.invite{padding:1.5rem;margin:-60px auto 1.5rem;width:92%;}.divider{width:80%;margin:2rem auto;}.story-img{float:none;width:60%;margin:0 auto 1.5rem;display:block;}.story-text{text-align:center;}.dropdown{display:block;margin-bottom:1rem;}.btn-invite{width:100%;margin:0.3rem 0;}}
 @media (max-width:576px){.hero{min-height:50vh;}.invite{padding:1.2rem;margin:-40px auto 1.2rem;}.divider{margin:1.5rem auto;}.dropdown-menu{width:100%;}.story-img{width:80%;}}
 @media (prefers-reduced-motion:reduce){.btn-invite{transition:none;}}
-/* ======  EXTRAS ====== */
+/* ====== EXTRAS ====== */
 #particles-js{position:absolute;inset:0;z-index:1;}
 </style>
 </head>
+
 
 <body>
 <!-- Partículas animadas de fondo -->
