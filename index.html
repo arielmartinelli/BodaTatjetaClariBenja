@@ -44,7 +44,7 @@
       --card: #ffffff;
       --shadow: 0 6px 20px rgba(0, 0, 0, .08);
       --radius: 20px;
-      --hero-img: url(https://i.pinimg.com/1200x/63/63/87/6363873cab1e3d15bdb3042512770dc5.jpg);
+      --hero-img: url(https://i.ibb.co/p6rJbKtZ/1.jpg);
     }
 
     * {
@@ -144,44 +144,46 @@
       border-top: 2px dashed var(--accent);
     }
 
-    /* Countdown */
+    /* Countdown - Siempre en una fila */
     .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(70px, 1fr));
+      display: flex;
       justify-content: center;
       gap: 0.8rem;
       margin: 1rem 0 0.5rem;
       padding: 0 0.5rem;
+      flex-wrap: nowrap;
     }
 
     .counter {
       background: var(--accent);
       border-radius: 12px;
-      padding: 0.8rem;
-      min-width: 70px;
+      padding: 0.6rem;
+      min-width: 60px;
       box-shadow: var(--shadow);
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .counter .num {
       font-weight: 700;
-      font-size: clamp(1.4rem, 4vw, 1.6rem);
+      font-size: 1.4rem;
+      color: var(--primary-dark);
     }
 
     .counter .lbl {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--muted);
     }
 
-    /* Historia */
+    /* Historia - Imagen más pequeña y texto con sangría */
     .story {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 1.5rem;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       margin-top: 1.5rem;
     }
@@ -189,22 +191,22 @@
     .story-img {
       flex: 0 0 auto;
       text-align: center;
-      width: 100%;
-      max-width: 360px;
+      width: 35%;
+      max-width: 220px;
     }
 
     .story-img img {
       width: 100%;
-      max-width: 360px;
       border-radius: 16px;
       box-shadow: var(--shadow);
       display: block;
     }
 
     .story-text {
-      flex: 1 1 300px;
-      min-width: 0;
-      text-align: left;
+      flex: 1;
+      text-align: justify;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent);
     }
 
     /* Timeline */
@@ -281,8 +283,20 @@
       }
       
       .countdown {
-        grid-template-columns: repeat(2, minmax(70px, 1fr));
         gap: 0.5rem;
+      }
+      
+      .counter {
+        min-width: 55px;
+        padding: 0.5rem;
+      }
+      
+      .counter .num {
+        font-size: 1.2rem;
+      }
+      
+      .counter .lbl {
+        font-size: 0.65rem;
       }
       
       .divider {
@@ -290,7 +304,20 @@
         margin: 2rem auto;
       }
       
+      .story {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .story-img {
+        width: 60%;
+        margin-bottom: 1rem;
+      }
+      
       .story-text {
+        width: 100%;
+        padding-left: 0;
+        border-left: none;
         text-align: center;
       }
       
@@ -310,25 +337,21 @@
         min-height: 50vh;
       }
       
-      .countdown {
-        grid-template-columns: repeat(2, minmax(65px, 1fr));
-      }
-      
       .counter--s {
-        display: none;
+        display: flex !important; /* Mostrar segundos siempre */
       }
       
       .counter {
-        padding: 0.6rem;
-        min-width: 65px;
+        min-width: 50px;
+        padding: 0.4rem;
       }
       
       .counter .num {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
       
       .counter .lbl {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
       }
       
       .invite {
@@ -343,20 +366,28 @@
       .dropdown-menu {
         width: 100%;
       }
+      
+      .story-img {
+        width: 80%;
+      }
     }
 
     @media (max-width: 400px) {
       .countdown {
-        grid-template-columns: repeat(2, minmax(55px, 1fr));
+        gap: 0.3rem;
       }
       
       .counter {
-        min-width: 55px;
-        padding: 0.5rem;
+        min-width: 45px;
+        padding: 0.3rem;
       }
       
       .counter .num {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+      
+      .counter .lbl {
+        font-size: 0.55rem;
       }
     }
 
@@ -364,17 +395,6 @@
     @media (prefers-reduced-motion: reduce) {
       .btn-invite {
         transition: none;
-      }
-    }
-
-    /* Modo oscuro opcional */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-start: #2a2a2a;
-        --bg-end: #1a1a1a;
-        --ink: #f0f0f0;
-        --muted: #aaaaaa;
-        --card: #333333;
       }
     }
   </style>
@@ -418,13 +438,11 @@
       <h2 class="section-title">Nuestra Historia</h2>
       <div class="story">
         <div class="story-img">
-          <img src="https://i.pinimg.com/736x/cb/c2/b4/cbc2b40428671581236f36a04f0a6983.jpg" alt="Ilustración pareja"
-            style="width: 55%;">
+          <img src="https://i.pinimg.com/736x/cb/c2/b4/cbc2b40428671581236f36a04f0a6983.jpg" alt="Ilustración pareja">
         </div>
         <div class="story-text">
-          <p>Clarisa y Benjamín se conocieron una tarde de primavera, en lo que parecía una simple casualidad, pero
-            terminó siendo el inicio de todo. Desde entonces, cada risa, cada sueño y cada momento juntos fue armando
-            esta hermosa historia de amor que hoy celebramos.</p>
+          <p>Clarisa y Benjamín se conocieron una tarde de primavera, en lo que parecía una simple casualidad, pero terminó siendo el inicio de todo. Desde entonces, cada risa, cada sueño y cada momento juntos fue armando esta hermosa historia de amor que hoy celebramos.</p>
+          <p>Su conexión fue inmediata, y con el tiempo descubrieron que compartían los mismos valores, sueños y metas. Después de un viaje inolvidable juntos, Benjamín decidió pedirle matrimonio a Clarisa en el mismo lugar donde se conocieron, creando así un círculo perfecto de amor y compromiso.</p>
         </div>
       </div>
     </section>
