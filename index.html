@@ -228,21 +228,18 @@
       }
     }
 
-    /* Historia - Imagen más pequeña y texto con sangría */
+    /* HISTORIA - NUEVO DISEÑO CON TEXTO QUE FLUYE */
     .story {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 1.5rem;
-      align-items: flex-start;
-      justify-content: center;
       margin-top: 1.5rem;
+      overflow: hidden; /* Contiene el float */
     }
 
     .story-img {
-      flex: 0 0 auto;
-      text-align: center;
+      float: left;
       width: 35%;
       max-width: 220px;
+      margin: 0 1.5rem 1rem 0;
+      shape-outside: margin-box;
     }
 
     .story-img img {
@@ -253,10 +250,13 @@
     }
 
     .story-text {
-      flex: 1;
       text-align: justify;
-      padding-left: 1rem;
-      border-left: 3px solid var(--accent);
+    }
+
+    .story-text::after {
+      content: "";
+      display: table;
+      clear: both;
     }
 
     /* Timeline */
@@ -337,20 +337,15 @@
         margin: 2rem auto;
       }
       
-      .story {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
+      /* Ajustes para la historia en móviles */
       .story-img {
+        float: none;
         width: 60%;
-        margin-bottom: 1rem;
+        margin: 0 auto 1.5rem;
+        display: block;
       }
       
       .story-text {
-        width: 100%;
-        padding-left: 0;
-        border-left: none;
         text-align: center;
       }
       
@@ -442,7 +437,7 @@
           <img src="https://i.pinimg.com/736x/cb/c2/b4/cbc2b40428671581236f36a04f0a6983.jpg" alt="Ilustración pareja">
         </div>
         <div class="story-text">
-          <p>Clarisa y Benjamín se conocieron una tarde de primavera, en lo que parecía una simple casualidad, pero terminó siendo el inicio de todo. Desde entonces, cada risa, cada sueño y cada momento juntos fue armando esta hermosa historia de amor que hoy celebramos.</p>
+          <p class="px-2">Clarisa y Benjamín se conocieron una tarde de primavera, en lo que parecía una simple casualidad, pero terminó siendo el inicio de todo. Desde entonces, cada risa, cada sueño y cada momento juntos fue armando esta hermosa historia de amor que hoy celebramos.</p>
         </div>
       </div>
     </section>
