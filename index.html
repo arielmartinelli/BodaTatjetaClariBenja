@@ -1,409 +1,97 @@
 <!DOCTYPE html>
 <html lang="es" itemscope itemtype="https://schema.org/Event">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitación de boda — Clarisa & Benjamín</title>
-  <meta name="description"
-    content="¡Nos casamos! Acompañanos el 17 de Enero de 2026 en Salón Las Estrellas, Córdoba. Confirmá tu asistencia y agregá el evento a tu calendario." />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Invitación de boda — Clarisa & Benjamín</title>
+<meta name="description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026 en Salón Las Estrellas, Córdoba. Confirmá tu asistencia y agregá el evento a tu calendario." />
 
-  <!-- Metaetiquetas Open Graph actualizadas con el enlace directo correcto -->
-  <meta property="og:title" content="Invitación de boda — Clarisa & Benjamín" />
-  <meta property="og:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
-  <meta property="og:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
-  <meta property="og:url" content="https://tarjeta-boda-benja-clari.vercel.app/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="628" />
+<!-- Open Graph -->
+<meta property="og:title" content="Invitación de boda — Clarisa & Benjamín" />
+<meta property="og:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
+<meta property="og:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
+<meta property="og:url" content="https://tarjeta-boda-benja-clari.vercel.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Invitación de boda — Clarisa & Benjamín" />
+<meta name="twitter:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
+<meta name="twitter:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Invitación de boda — Clarisa & Benjamín" />
-  <meta name="twitter:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
-  <meta name="twitter:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap"
-    rel="stylesheet">
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <style>
-    :root {
-      --bg-start: #fffdfc;
-      --bg-end: #fef7f8;
-      --primary: #e3b7c0;
-      --primary-dark: #c90f34;
-      --accent: #f9e6ea;
-      --ink: #4a3b3b;
-      --muted: #7b6e6e;
-      --card: #ffffff;
-      --shadow: 0 6px 20px rgba(0, 0, 0, .08);
-      --radius: 20px;
-      --hero-img: url(fotos/2.jpg);
-    }
+<!-- AOS (Animate On Scroll) para efecto tipo Aniview -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    * {
-      box-sizing: border-box;
-    }
+<!-- Animate.css para microanimaciones -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"/>
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--ink);
-      background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
-      min-height: 100vh;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--hero-img) center/cover no-repeat;
-      filter: brightness(.85) saturate(.9);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(60% 50% at 50% 20%, rgba(0, 0, 0, .15), rgba(0, 0, 0, .35));
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: 2rem 1rem;
-      max-width: 800px;
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      margin: 0 0 .4rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      line-height: 1.2;
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2.3vw, 1.5rem);
-      margin: 0;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    }
-
-    /* Card central */
-    .invite {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 2rem;
-      max-width: 1000px;
-      margin: -80px auto 2rem;
-      position: relative;
-      z-index: 10;
-      width: 95%;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary-dark);
-      text-align: center;
-      margin-top: 2rem;
-      font-size: clamp(1.8rem, 4vw, 2.2rem);
-    }
-
-    .lead-soft {
-      color: var(--muted);
-      text-align: center;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-    }
-
-    .divider {
-      width: 60%;
-      margin: 2.5rem auto;
-      border: 0;
-      border-top: 2px dashed var(--accent);
-    }
-
-    /* Countdown - Siempre en una fila */
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 0.8rem;
-      margin: 1.5rem 0 1rem;
-      padding: 0 0.5rem;
-      flex-wrap: nowrap;
-    }
-
-    .counter {
-      background: var(--accent);
-      border-radius: 12px;
-      padding: 1rem 0.5rem;
-      min-width: 80px;
-      box-shadow: var(--shadow);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .counter .num {
-      font-weight: 800;
-      font-size: 2.8rem; /* Tamaño para desktop */
-      color: var(--primary-dark);
-      margin-bottom: 0.2rem;
-      line-height: 1;
-    }
-
-    .counter .lbl {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-
-    /* Ajustes para móviles - REDUCIDO */
-    @media (max-width: 768px) {
-      .countdown {
-        gap: 0.5rem;
-        margin: 1.2rem 0 0.8rem;
-        padding: 0 0.3rem;
-        transform: none; /* Eliminamos el scale anterior */
-        width: 100%;
-      }
-      
-      .counter {
-        min-width: 60px;
-        padding: 0.7rem 0.3rem;
-        border-radius: 10px;
-      }
-      
-      .counter .num {
-        font-size: 1.8rem; /* Reducido para móviles */
-      }
-      
-      .counter .lbl {
-        font-size: 0.7rem;
-      }
-    }
-
-    /* Ajustes para pantallas muy pequeñas */
-    @media (max-width: 400px) {
-      .countdown {
-        gap: 0.4rem;
-      }
-      
-      .counter {
-        min-width: 50px;
-        padding: 0.6rem 0.2rem;
-      }
-      
-      .counter .num {
-        font-size: 1.6rem;
-      }
-      
-      .counter .lbl {
-        font-size: 0.65rem;
-      }
-    }
-
-    /* HISTORIA - NUEVO DISEÑO CON TEXTO QUE FLUYE */
-    .story {
-      margin-top: 1.5rem;
-      overflow: hidden; /* Contiene el float */
-    }
-
-    .story-img {
-      float: left;
-      width: 35%;
-      max-width: 220px;
-      margin: 0 1.5rem 1rem 0;
-      shape-outside: margin-box;
-    }
-
-    .story-img img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      display: block;
-    }
-
-    .story-text {
-      text-align: justify;
-    }
-
-    .story-text::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* Timeline */
-    .timeline {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-    }
-
-    .timeline li {
-      background: var(--card);
-      border-left: 4px solid var(--primary);
-      margin: 0.9rem 0;
-      padding: 0.8rem 1rem;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      font-size: clamp(0.9rem, 2vw, 1rem);
-    }
-
-    /* Mapa */
-    .map {
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      margin-top: 1rem;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 280px;
-      border: 0;
-      display: block;
-    }
-
-    /* Botones */
-    .btn-invite {
-      border: none;
-      border-radius: 30px;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      color: #fff;
-      background: var(--primary);
-      box-shadow: var(--shadow);
-      transition: transform .2s, background .2s;
-      margin: 0.5rem;
-      display: inline-block;
-    }
-
-    .btn-invite:hover {
-      transform: translateY(-2px);
-      background: var(--primary-dark);
-    }
-
-    .notice {
-      text-align: center;
-      padding: 1rem;
-      border-radius: 12px;
-      background: rgba(227, 183, 192, .15);
-      margin: 1.2rem 0;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 60vh;
-      }
-      
-      .invite {
-        padding: 1.5rem;
-        margin: -60px auto 1.5rem;
-        width: 92%;
-      }
-      
-      .divider {
-        width: 80%;
-        margin: 2rem auto;
-      }
-      
-      /* Ajustes para la historia en móviles */
-      .story-img {
-        float: none;
-        width: 60%;
-        margin: 0 auto 1.5rem;
-        display: block;
-      }
-      
-      .story-text {
-        text-align: center;
-      }
-      
-      .dropdown {
-        display: block;
-        margin-bottom: 1rem;
-      }
-      
-      .btn-invite {
-        width: 100%;
-        margin: 0.3rem 0;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero {
-        min-height: 50vh;
-      }
-      
-      .counter--s {
-        display: flex !important; /* Mostrar segundos siempre */
-      }
-      
-      .invite {
-        padding: 1.2rem;
-        margin: -40px auto 1.2rem;
-      }
-      
-      .divider {
-        margin: 1.5rem auto;
-      }
-      
-      .dropdown-menu {
-        width: 100%;
-      }
-      
-      .story-img {
-        width: 80%;
-      }
-    }
-
-    /* Mejoras de accesibilidad */
-    @media (prefers-reduced-motion: reduce) {
-      .btn-invite {
-        transition: none;
-      }
-    }
-  </style>
+<style>
+/* ======  TU CSS ORIGINAL ====== */
+:root{--bg-start:#fffdfc;--bg-end:#fef7f8;--primary:#e3b7c0;--primary-dark:#c90f34;--accent:#f9e6ea;--ink:#4a3b3b;--muted:#7b6e6e;--card:#ffffff;--shadow:0 6px 20px rgba(0,0,0,.08);--radius:20px;--hero-img:url(fotos/2.jpg);}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:linear-gradient(to bottom,var(--bg-start),var(--bg-end));min-height:100vh;line-height:1.6;overflow-x:hidden;}
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background:var(--hero-img) center/cover no-repeat;filter:brightness(.85) saturate(.9);}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 20%,rgba(0,0,0,.15),rgba(0,0,0,.35));}
+.hero-content{position:relative;z-index:2;padding:2rem 1rem;max-width:800px;width:100%;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4rem);margin:0 0 .4rem;text-shadow:2px 2px 4px rgba(0,0,0,0.5);line-height:1.2;}
+.hero p{font-size:clamp(1rem,2.3vw,1.5rem);margin:0;text-shadow:1px 1px 3px rgba(0,0,0,0.6);}
+.invite{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;max-width:1000px;margin:-80px auto 2rem;position:relative;z-index:10;width:95%;}
+.section-title{font-family:'Playfair Display',serif;color:var(--primary-dark);text-align:center;margin-top:2rem;font-size:clamp(1.8rem,4vw,2.2rem);}
+.lead-soft{color:var(--muted);text-align:center;font-size:clamp(1rem,2.5vw,1.2rem);}
+.divider{width:60%;margin:2.5rem auto;border:0;border-top:2px dashed var(--accent);}
+.countdown{display:flex;justify-content:center;gap:0.8rem;margin:1.5rem 0 1rem;padding:0 0.5rem;flex-wrap:nowrap;}
+.counter{background:var(--accent);border-radius:12px;padding:1rem 0.5rem;min-width:80px;box-shadow:var(--shadow);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
+.counter .num{font-weight:800;font-size:2.8rem;color:var(--primary-dark);margin-bottom:0.2rem;line-height:1;}
+.counter .lbl{font-size:0.85rem;color:var(--muted);font-weight:500;text-transform:uppercase;}
+@media (max-width:768px){.countdown{gap:0.5rem;margin:1.2rem 0 0.8rem;padding:0 0.3rem;width:100%;}.counter{min-width:60px;padding:0.7rem 0.3rem;border-radius:10px;}.counter .num{font-size:1.8rem;}.counter .lbl{font-size:0.7rem;}}
+@media (max-width:400px){.countdown{gap:0.4rem;}.counter{min-width:50px;padding:0.6rem 0.2rem;}.counter .num{font-size:1.6rem;}.counter .lbl{font-size:0.65rem;}}
+.story{margin-top:1.5rem;overflow:hidden;}
+.story-img{float:left;width:35%;max-width:220px;margin:0 1.5rem 1rem 0;shape-outside:margin-box;}
+.story-img img{width:100%;border-radius:16px;box-shadow:var(--shadow);display:block;}
+.story-text{text-align:justify;}
+.story-text::after{content:"";display:table;clear:both;}
+.timeline{list-style:none;padding:0;margin:1rem 0;}
+.timeline li{background:var(--card);border-left:4px solid var(--primary);margin:0.9rem 0;padding:0.8rem 1rem;border-radius:10px;box-shadow:var(--shadow);font-size:clamp(0.9rem,2vw,1rem);}
+.map{border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-top:1rem;}
+.map iframe{width:100%;height:280px;border:0;display:block;}
+.btn-invite{border:none;border-radius:30px;padding:0.8rem 1.5rem;font-size:1rem;cursor:pointer;color:#fff;background:var(--primary);box-shadow:var(--shadow);transition:transform .2s,background .2s;margin:0.5rem;display:inline-block;}
+.btn-invite:hover{transform:translateY(-2px);background:var(--primary-dark);}
+.notice{text-align:center;padding:1rem;border-radius:12px;background:rgba(227,183,192,.15);margin:1.2rem 0;font-size:clamp(0.9rem,2vw,1rem);}
+@media (max-width:768px){.hero{min-height:60vh;}.invite{padding:1.5rem;margin:-60px auto 1.5rem;width:92%;}.divider{width:80%;margin:2rem auto;}.story-img{float:none;width:60%;margin:0 auto 1.5rem;display:block;}.story-text{text-align:center;}.dropdown{display:block;margin-bottom:1rem;}.btn-invite{width:100%;margin:0.3rem 0;}}
+@media (max-width:576px){.hero{min-height:50vh;}.invite{padding:1.2rem;margin:-40px auto 1.2rem;}.divider{margin:1.5rem auto;}.dropdown-menu{width:100%;}.story-img{width:80%;}}
+@media (prefers-reduced-motion:reduce){.btn-invite{transition:none;}}
+/* ======  EXTRAS ====== */
+#particles-js{position:absolute;inset:0;z-index:1;}
+</style>
 </head>
 
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>💍 Benjamín & Clarisa</h1>
-      <p>¡Nos casamos! Queremos compartir este gran día con vos ✨</p>
-    </div>
-  </header>
+<!-- Partículas animadas de fondo -->
+<div id="particles-js"></div>
 
+<header class="hero">
+  <div class="hero-content animate__animated animate__fadeInDown">
+    <h1>💍 Benjamín & Clarisa</h1>
+    <p>¡Nos casamos! Queremos compartir este gran día con vos ✨</p>
+  </div>
+</header>
+
+<main class="invite" data-aos="zoom-in">
   <main class="invite">
     <section>
       <h2 class="section-title">⏳ Cuenta regresiva</h2>
@@ -533,38 +221,54 @@
       </div>
     </section>
   </main>
+</main>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- Countdown -->
-  <script>
-    const eventDate = new Date('2026-01-17T19:00:00-03:00');
-    const d = document.getElementById('d'),
-      h = document.getElementById('h'),
-      m = document.getElementById('m'),
-      s = document.getElementById('s');
+<script>
+// Init AOS
+AOS.init({duration:1000, once:true});
 
-    function pad(n) { return String(n).padStart(2, '0'); }
+// SweetAlert de bienvenida
+Swal.fire({
+  title: 'Bienvenido 💕',
+  text: 'Gracias por ser parte de este momento especial',
+  icon: 'heart',
+  confirmButtonColor: '#e3b7c0'
+});
 
-    function updateCountdown() {
-      const now = new Date();
-      const diff = eventDate - now;
-      if (diff <= 0) { d.textContent = h.textContent = m.textContent = s.textContent = '00'; return; }
+// Countdown original
+const eventDate=new Date('2026-01-17T19:00:00-03:00');
+const d=document.getElementById('d'),h=document.getElementById('h'),m=document.getElementById('m'),s=document.getElementById('s');
+function pad(n){return String(n).padStart(2,'0');}
+function updateCountdown(){
+  const now=new Date();
+  const diff=eventDate-now;
+  if(diff<=0){d.textContent=h.textContent=m.textContent=s.textContent='00';return;}
+  const sec=Math.floor(diff/1000);
+  d.textContent=Math.floor(sec/86400);
+  h.textContent=pad(Math.floor((sec%86400)/3600));
+  m.textContent=pad(Math.floor((sec%3600)/60));
+  s.textContent=pad(sec%60);
+}
+setInterval(updateCountdown,1000);updateCountdown();
 
-      const sec = Math.floor(diff / 1000);
-      const days = Math.floor(sec / 86400);
-      const hrs = Math.floor((sec % 86400) / 3600);
-      const mins = Math.floor((sec % 3600) / 60);
-      const secs = sec % 60;
-
-      d.textContent = days;
-      h.textContent = pad(hrs);
-      m.textContent = pad(mins);
-      s.textContent = pad(secs);
-    }
-    setInterval(updateCountdown, 1000); updateCountdown();
-  </script>
+// Particles.js config
+particlesJS('particles-js',{
+  particles:{
+    number:{value:60,density:{enable:true,value_area:800}},
+    color:{value:'#ffffff'},
+    shape:{type:'circle'},
+    opacity:{value:0.3,random:true},
+    size:{value:4,random:true},
+    line_linked:{enable:false},
+    move:{enable:true,speed:1,direction:'none',random:true,out_mode:'out'}
+  },
+  interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100,duration:0.4}}},
+  retina_detect:true
+});
+</script>
 </body>
-
 </html>
