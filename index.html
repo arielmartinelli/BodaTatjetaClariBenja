@@ -519,20 +519,6 @@
     });
   </script>
 
-<audio autoplay loop muted id="bg-music">
-    <source src="public/Marcha Nupcial F Mendelssohn - Entrada de la Novia - Coro Belén.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
-  </audio>
-
-  <script>
-    const audio = document.getElementById('bg-music');
-    audio.muted = false;
-    audio.volume = 0.3;
-    audio.play().catch(() => {
-      console.log("Reproducción automática bloqueada, el usuario debe interactuar para reproducir audio.");
-    });
-  </script>
-
 </body>
 
 </html>
