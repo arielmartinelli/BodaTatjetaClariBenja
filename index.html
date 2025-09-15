@@ -9,7 +9,7 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Invitación de boda — Clarisa & Benjamín" />
 <meta property="og:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
-<meta property="og:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
+<meta property="og:image" content="https://i.ibb.co/zVyxJFYm/3.jpg" />
 <meta property="og:url" content="https://tarjeta-boda-benja-clari.vercel.app/" />
 <meta property="og:type" content="website" />
 <meta property="og:image:width" content="1200" />
@@ -17,9 +17,10 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Invitación de boda — Clarisa & Benjamín" />
 <meta name="twitter:description" content="¡Nos casamos! Acompañanos el 17 de Enero de 2026." />
-<meta name="twitter:image" content="https://i.ibb.co/p6rJbKtZ/1.jpg" />
+<meta name="twitter:image" content="https://i.ibb.co/zVyxJFYm/3.jpg" />
 
 <!-- Tipografías -->
+ <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
@@ -44,7 +45,7 @@
   --bg-start:#fffdfc;--bg-end:#fef7f8;--primary:#e3b7c0;
   --primary-dark:#c90f34;--accent:#f9e6ea;--ink:#4a3b3b;
   --muted:#7b6e6e;--card:#ffffff;--shadow:0 6px 20px rgba(0,0,0,.08);
-  --radius:20px;--hero-img:url(fotos/2.jpg);
+  --radius:20px;--hero-img:url(fotos/3.jpg);
 }
 *{box-sizing:border-box;}
 body{
@@ -63,11 +64,20 @@ body{
 }
 .hero::after{ /* ← QUITÉ el segundo fondo (antes había un radial) */ }
 .hero-content{position:relative;z-index:2;padding:2rem 1rem;max-width:800px;width:100%;}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.2rem,6vw,4rem);margin:0 0 .4rem;
-  text-shadow:2px 2px 4px rgba(0,0,0,0.5);line-height:1.2;
+
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem,6vw,5rem);
+  margin: 0 0 .4rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.2;
 }
+
+.subtexto {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;              
+}
+
 .hero p{
   font-size:clamp(1rem,2.3vw,1.5rem);margin:0;
   text-shadow:1px 1px 3px rgba(0,0,0,0.6);
@@ -144,8 +154,8 @@ body{
 
 <header class="hero">
   <div class="hero-content animate__animated animate__fadeInDown">
-    <h1>💍 Benjamín & Clarisa</h1>
-    <p>¡Nos casamos! Queremos compartir este gran día con vos ✨</p>
+    <h1>Benjamín & Clarisa 💍</h1>
+    <p class="subtexto">¡Nos casamos! Queremos compartir este gran día con vos ✨</p>
   </div>
 </header>
 
@@ -169,7 +179,7 @@ body{
         <img src="https://i.pinimg.com/736x/cb/c2/b4/cbc2b40428671581236f36a04f0a6983.jpg" alt="Ilustración pareja">
       </div>
       <div class="story-text">
-        <p class="px-2">Clarisa y Benjamín se conocieron una tarde de primavera, en lo que parecía una simple casualidad, pero terminó siendo el inicio de todo. Desde entonces, cada risa, cada sueño y cada momento juntos fue armando esta hermosa historia de amor que hoy celebramos.</p>
+        <p class="px-2">Una tarde de primavera nuestros caminos se cruzaron. Lo que parecía una simple casualidad se convirtió en el inicio de nuestra historia. Desde entonces, cada risa, cada sueño y cada instante compartido nos trajo hasta aquí: a celebrar este amor con quienes más queremos.</p>
       </div>
     </div>
   </section>
@@ -179,11 +189,11 @@ body{
   <section data-aos="fade-up">
     <h2 class="section-title">🕰️ Itinerario</h2>
     <ul class="timeline">
-      <li><b>19:00 hs</b> – Comienzo de recepción🌸</li>
-      <li><b>19:30 hs</b> – Ceremonia civil y religiosa en el salón ⛪</li>
-      <li><b>21:00 hs</b> – Cena 🍽️✨</li>
-      <li><b>23:00 hs</b> – Fiesta y Baile 🎶💃🕺</li>
-      <li><b>03:00 hs</b> – Despedida y cierre 🌙</li>
+      <li><b>19:00 hs</b> – Recepción de invitados✨</li>
+      <li><b>19:30 hs</b> – Ceremonia civil y religiosa ⛪</li>
+      <li><b>21:00 hs</b> – Cena 🍴</li>
+      <li><b>23:00 hs</b> – Brindis y fiesta🥂</li>
+      <li><b>03:00 hs</b> – Despedida y cierre🌙</li>
     </ul>
   </section>
 
@@ -212,9 +222,9 @@ body{
   <hr class="divider" data-aos="fade" />
 
   <section data-aos="flip-right">
-    <div class="notice">💌 El valor de la tarjeta es de <b>$75.000</b>, a abonar hasta <b>30 días antes de la boda</b> (17 de Diciembre)</div>
+    <div class="notice">💌 El valor de la tarjeta es de $75.000. El mismo deberá abonarse <b>antes del 17 de diciembre</b> (30 días previos a la boda).</div>
     <div class="text-center">
-      Para confirmar su asistencia, pueden abonar mediante este alias: <b>benja.clari.boda</b>
+      Podés hacerlo mediante transferencia al siguiente alias: <b>benja.clari.boda</b>.</b>
     </div>
   </section>
 
